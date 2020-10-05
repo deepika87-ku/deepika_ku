@@ -1,0 +1,28 @@
+from random import randint
+t=["R","P","S"]
+computer=t[randint(0,2)]
+player=False
+while (player==False):
+    player=input("R, P, S?")
+    if(player==computer):
+         print("game is Tie!")
+    elif(player=="R"):
+        if(computer=="P"):
+            print("you lose",computer,"covers",player)
+        else:
+            print("you win",player ,"smashes",computer)
+    elif(player=="S"):
+        if(computer=="P"):
+            print("you win",player,"cuts",computer)
+        else:
+            print("you lose",computer,"cuts",player )
+    elif(player=="R"):
+        if(computer=="S"):
+                print("you lose",player,"smashes",computer)
+        else:
+               print("you wins",computer,"smashes",player)
+                
+    else:
+        print("print give correct input")
+    player = False
+    computer = t[randint(0,2)] 
