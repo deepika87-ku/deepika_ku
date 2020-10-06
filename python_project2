@@ -1,0 +1,13 @@
+import os
+import sys
+diry="E:\proj"
+for filename in os.listdir(diry):
+    with open(os.path.join(diry, filename), 'r') as f:
+        for lines in f:
+            newline=lines.upper()
+            print(newline)
+            if "am" in lines:
+                print("its there")
+            else:
+                print("very sorry")
+                
