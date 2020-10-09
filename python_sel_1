@@ -1,0 +1,13 @@
+from selenium import webdriver
+a=webdriver.Chrome()
+url="https://www.godaddy.com/"
+a.get("https://www.godaddy.com/")
+a.maximize_window()
+get_title=a.title
+#print(get_title)
+print(a.get(url))
+get_source=a.page_source
+print(get_source)
+if "GoDaddy" in get_source:
+    print("its there")
+a.quit()
