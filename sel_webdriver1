@@ -1,0 +1,16 @@
+from selenium.webdriver.common.by import By
+import time
+
+driver = webdriver.Chrome()
+driver.implicitly_wait(5)
+driver.get("http://www.google.com")
+print(driver.title)
+driver.find_element(By.NAME, 'q').send_keys("naveen automationlabs")
+optionsList = driver.find_elements(By.CSS_SELECTOR, 'ul.erkvQe li span')
+print(len(optionsList))
+for lst in optionsList:
+    print(lst.text)
+    if lst.text == 'naveen automationlabs youtube':
+        lst.click()
+        break
+time.sleep(5)
