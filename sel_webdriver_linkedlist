@@ -1,0 +1,17 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+import time
+driver = webdriver.Chrome()
+driver.implicitly_wait(10)
+driver.get("https://www.amazon.in")
+linklist=driver.find_elements(By.TAG_NAME,'a')
+print(len(linklist))
+for ele in linklist:
+    print(ele.text)
+    print(ele.get_attribute('href'))
+
+imagelist=driver.find_elements(By.TAG_NAME,'img')
+print(len(imagelist))
+for ele in imagelist:
+    print(ele.get_attribute('src'))
